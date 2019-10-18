@@ -11,6 +11,8 @@ namespace Programa
             List<Equipo> equipos = LigaDAO.Instance.Equipos;
             List<Jugador> jugadores = LigaDAO.Instance.Jugadores;
             List<Partido> partidos = LigaDAO.Instance.Partidos;
+
+            //exercici 01
             Console.WriteLine("Equipos: ");
             equipos.ForEach(Console.WriteLine);
 
@@ -20,8 +22,17 @@ namespace Programa
             Console.WriteLine("Partidos: ");
             partidos.ForEach(Console.WriteLine);
 
+            //Exercici 02
+            Console.WriteLine(equipos.Select(e => e.Ciudad.Equals("Regal Barcelona")).All());
+            
 
-            Console.ReadLine();
+
+
+
+
+
+
+             Console.ReadLine();
 
         }
     }
