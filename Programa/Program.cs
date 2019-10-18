@@ -1,29 +1,25 @@
 ﻿using System;
+using System.Collections.Generic;
 using Modelo;
-
+using System.Linq;
 namespace Programa
 {
     class Program
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Equipos :");
-            foreach (var e in LigaDAO.Instance.Equipos)
-            {
-                Console.WriteLine("\t" + e);
-            }
+            List<Equipo> equipos = LigaDAO.Instance.Equipos;
+            List<Jugador> jugadores = LigaDAO.Instance.Jugadores;
+            List<Partido> partidos = LigaDAO.Instance.Partidos;
+            Console.WriteLine("Equipos: ");
+            equipos.ForEach(Console.WriteLine);
 
-            Console.WriteLine("Jugadores:");
-            foreach (var j in LigaDAO.Instance.Jugadores)
-            {
-                Console.WriteLine("\t" + j);
-            }
+            Console.WriteLine("Jugadores: ");
+            jugadores.ForEach(Console.WriteLine);
 
-            Console.WriteLine("Partidos:");
-            foreach (var p in LigaDAO.Instance.Partidos)
-            {
-                Console.WriteLine("\t" + p);
-            }
+            Console.WriteLine("Partidos: ");
+            partidos.ForEach(Console.WriteLine);
+
 
             Console.ReadLine();
 
