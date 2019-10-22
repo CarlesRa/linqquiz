@@ -131,7 +131,7 @@ namespace Modelo
             Equipos[0].Jugadores.Add(Jugadores[7]);
 
             //(9,"Carlos","Suarez","Alero",2,"2011-02-19 00:00:00",66000,2,"2.03"),
-            Jugadores.Add(Jugador.CreateJugador(8, "Victor ", "Sada", "Base", Jugadores[0],  DateTime.Parse("2012-01-01 00:00:00"), 80000, Equipos[0], 1.92));
+            Jugadores.Add(Jugador.CreateJugador(8, "Victor ", "Sada", "Base", Jugadores[0],  DateTime.Parse("2012-01-01 00:00:00"), 80000, Equipos[1], 1.92));
             Equipos[1].Jugadores.Add(Jugadores[8]);
 
             //(10,"Xavi ","Rey","Pivot",14,"2008-10-12 00:00:00",104500,5,"2.09"),
@@ -157,7 +157,7 @@ namespace Modelo
             Jugadores[11].Capitan = Jugadores[13];
 
             //(15,"anonimo","anonimo","Ala-pivot",2,"2012-01-01 00:00:00",4000,3,"2.00"),
-            Jugadores.Add(Jugador.CreateJugador(15,"anonimo","anonimo","Ala-pivot",Jugadores[1],DateTime.Parse("2012-01-01 00:00:00"),4000,Equipos[2],2.00));
+            Jugadores.Add(Jugador.CreateJugador(15,"anonimo","anonimo","Ala-pivot",Jugadores[1],DateTime.Parse("2012-01-01 00:00:00"),4000,Equipos[4],2.00));
             Equipos[4].Jugadores.Add(Jugadores[14]);
             Jugadores[9].Capitan = Jugadores[14];
 

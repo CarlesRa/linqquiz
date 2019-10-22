@@ -25,7 +25,7 @@ namespace Modelo
         override public string ToString()
         {
             return "ID= " + ID + " Nom: " + Nombre + " Ciudad: " + Ciudad + " Puntos " + Puntos;
-        }
+        }        
 
         private Equipo(int id, string nombre, string ciudad, string web, int puntos) : this()
         {
@@ -36,5 +36,7 @@ namespace Modelo
             Puntos = puntos;
             Jugadores = new System.Collections.Generic.List<Jugador>();
         }
+
+    
     }
 }

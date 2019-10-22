@@ -1,17 +1,19 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-
+using System.Runtime.Serialization;
+using System.Runtime.Serialization.Formatters.Binary;
 namespace Modelo
 {
-    public class Partido
+    [Serializable()]
+    public class Partido : ISerializable
     {
-        int Id { get; }
-        Equipo Local { get; }
-        Equipo Visitante { get; }
-        string Resultado { get; }
-        DateTime Fecha { get; }
-        string Arbitro { get; }
+        private int Id { get; }
+        public Equipo Local { get; }
+        public Equipo Visitante { get; }
+        public string Resultado { get; }
+        private DateTime Fecha { get; }
+        private string Arbitro { get; }
 
         private Partido(int id, Equipo local, Equipo visitante, string resultado, DateTime fecha, string arbitro)
         {
@@ -41,5 +43,24 @@ namespace Modelo
             return sb.ToString();
         }
 
+        public void GetObjectData(SerializationInfo info, StreamingContext context)
+        {
+            info.AddValue("Id", Id);
+            info.AddValue("Local", Local);
+            info.AddValue("Visitante", Visitante);
+            info.AddValue("Resultado", Resultado);
+            info.AddValue("Fecha", Fecha);
+            info.AddValue("Arbitro", Arbitro);
+        }
+
+        public Partido(SerializationInfo info, StreamingContext context)
+        {
+            Id = (int)info.GetValue("Id", typeof(int));
+            Local = (Equipo)info.GetValue("Local", typeof(Jugador));
+            Visitante = (Equipo)info.GetValue("Visitante", typeof(Jugador));
+            Resultado = (string)info.GetValue("Resultado", typeof(string));
+            Fecha = (DateTime)info.GetValue("Fecha", typeof(DateTime));
+            //Arbitro = 
+        }
     }
 }
